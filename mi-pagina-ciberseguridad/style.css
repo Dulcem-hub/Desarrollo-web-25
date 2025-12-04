@@ -1,0 +1,241 @@
+/* Tipografía y fondo general */
+body {
+  margin: 0;
+  font-family: 'Roboto Mono', monospace;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Encabezado principal */
+header {
+  text-align: center;
+  padding: 40px 20px 20px;
+  background-color: transparent;
+}
+
+header h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  color: #00ffcc;
+}
+
+/* Sección principal */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 80vh;
+  position: relative;
+  padding: 0 20px;
+}
+
+/* Mensaje de bienvenida */
+.mensaje h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.mensaje p {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin-bottom: 30px;
+}
+
+/* Botones principales */
+.botones {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.btn {
+  background-color: #00ffcc;
+  color: #000000;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #00ccaa;
+}
+
+/* Fondo animado tipo código */
+.fondo-codigo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(0, 255, 204, 0.05),
+    rgba(0, 255, 204, 0.05) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  animation: scrollCodigo 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes scrollCodigo {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 100%;
+  }
+}
+
+/* Pie de página */
+footer {
+  background-color: #1a1a1a;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  border-top: 2px solid #00ffcc;
+}
+
+/* Sección Ciber Mundo */
+.ciber-mundo {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.ciber-mundo header h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: #00ffcc;
+  margin-bottom: 40px;
+}
+
+article {
+  margin-bottom: 50px;
+}
+
+article h3 {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* Imágenes y figuras */
+figure {
+  margin: 0;
+}
+
+figure img {
+  width: 100%;
+  max-width: 600px;
+  border: 2px solid #00ffcc;
+  border-radius: 8px;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  margin-top: 8px;
+}
+
+/* Mapa interactivo */
+.mapa-interactivo {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.mapa-interactivo h3 {
+  font-size: 1.5rem;
+  color: #00ffcc;
+  margin-bottom: 20px;
+}
+
+.mapa-interactivo p {
+  font-size: 0.9rem;
+  color: #aaaaaa;
+  margin-top: 10px;
+}
+
+/* Consejos laterales */
+.consejos-laterales {
+  padding: 40px 20px;
+  max-width: 700px;
+  margin: auto;
+  text-align: left;
+}
+
+.consejos-laterales h3 {
+  font-size: 1.5rem;
+  color: #00ffcc;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.consejos-laterales ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.consejos-laterales li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  background-color: #1a1a1a;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #00ffcc;
+}
+
+.consejos-laterales img {
+  width: 40px;
+  height: 40px;
+}
+
+.consejos-laterales span {
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+/* Botón para test interactivo */
+.test-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: transparent;
+  border: 2px solid #00ffcc;
+  border-radius: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.test-btn:hover {
+  background-color: #00ffcc;
+  color: #000000;
+}
+
