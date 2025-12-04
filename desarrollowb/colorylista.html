@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Configuración Cisco XR5000</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+      margin: 20px;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+    }
+    section {
+      margin: 20px 0;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    h2 {
+      color: #004080;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+    ol {
+      padding-left: 20px;
+    }
+    .modulos { background-color: #e6f2ff; }
+    .comandos { background-color: #fff0e6; }
+    .definiciones { background-color: #e6ffe6; }
+    .interfaces { background-color: #fffbe6; }
+    strong { color: #cc0000; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Panel de Configuración Cisco</h1>
+    <p>Bienvenido al panel de configuración del router Cisco modelo XR5000.<br>
+    Aquí podrás visualizar los módulos principales, comandos esenciales y definiciones clave.<br>
+    ¡Prepárate para navegar por el mundo de las redes!</p>
+  </header>
+
+  <main>
+    <section class="modulos">
+      <h2>Módulos del Router</h2>
+      <ul>
+        <li>Interfaces</li>
+        <li>Seguridad</li>
+        <li>Routing</li>
+        <li>VLANs</li>
+      </ul>
+    </section>
+
+    <section class="comandos">
+      <h2>Comandos por Módulo</h2>
+      <ol>
+        <li><code>show ip interface brief</code></li>
+        <li><code>configure terminal</code></li>
+        <li><code>enable secret &lt;clave&gt;</code></li>
+        <li><code>ip route 0.0.0.0 0.0.0.0 &lt;gateway&gt;</code></li>
+      </ol>
+    </section>
+
+    <section class="definiciones">
+      <h2>Definiciones Técnicas</h2>
+      <ul>
+        <li><strong>NAT:</strong> Traducción de direcciones de red para permitir acceso externo.</li>
+        <li><strong>ACL:</strong> Listas de control de acceso que filtran tráfico según reglas.</li>
+        <li><strong>DHCP:</strong> Protocolo que asigna direcciones IP automáticamente.</li>
+        <li><strong>VTP:</strong> Protocolo para administrar VLANs en redes Cisco.</li>
+      </ul>
+    </section>
+
+    <section class="interfaces">
+      <h2>Interfaces del Router</h2>
+      <h3>GigabitEthernet</h3>
+      <pre>
+interface GigabitEthernet0/0
+ip address 192.168.1.1 255.255.255.0
+      </pre>
+      <h3>Serial</h3>
+      <pre>
+interface Serial0/0/0
+clock rate 64000
+      </pre>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de Imágenes</title>
+  <style>
+    .responsiva {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tipos de Imágenes en HTML</h1>
+
+  <!-- 🌰 Imagen responsiva: ardilla.jpg -->
+  <section>
+    <h2>Imagen Responsiva</h2>
+    <img src="ardilla.jpg" alt="Imagen de una ardilla" class="responsiva">
+  </section>
+
+  <!-- 🚜 Imagen con <picture>: tractor.jpg -->
+  <section>
+    <h2>Imagen con uso de picture </h2>
+    <picture>
+      <source srcset="tractor.avif" type="image/avif">
+      <source srcset="tractor.webp" type="image/webp">
+      <img src="tractor.jpg" alt="Imagen de un tractor" class="responsiva">
+    </picture>
+  </section>
+
+  <!-- 🦋 Imagen básica: mariposa.jpg -->
+  <section>
+    <h2>Imagen Básica</h2>
+    <img src="mariposa.jpg" alt="Imagen de una mariposa">
+  </section>
+
+</body>
+</html>

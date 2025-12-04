@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Ejemplo de Formulario</title>
+    <style>
+        body{font-family: Arial, sans-serif; padding:20px}
+        label{display:block; margin:8px 0}
+    </style>
+</head>
+<body>
+    <h2>Formulario de contacto (ejemplo)</h2>
+    <form method="post" action="form_handler.php">
+        <label>Nombre: <input type="text" name="name" required></label>
+        <label>Email: <input type="email" name="email" required></label>
+        <label>Mensaje:<br><textarea name="message" rows="4" cols="40" required></textarea></label>
+        <label><input type="checkbox" name="subscribe"> Suscribirme al boletín</label>
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+</html>

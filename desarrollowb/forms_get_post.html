@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Formularios GET y POST - Figuras interactivas</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+        body{font-family:Arial, Helvetica, sans-serif; padding:24px; background:#f7f7f7}
+        .container{display:flex; gap:20px; flex-wrap:wrap}
+        .card{background:white;border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,.06);flex:1;min-width:280px}
+        h1{font-size:20px;margin:0 0 12px}
+        form{display:flex;flex-direction:column;gap:8px}
+
+        /* Figura interactiva */
+        .figure{width:120px;height:120px;border-radius:16px;background:linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);display:flex;align-items:center;justify-content:center;margin:8px 0;transition:transform .18s ease, box-shadow .18s ease;cursor:pointer}
+        .figure img{width:72%;height:72%;object-fit:contain;border-radius:8px}
+        .figure:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 12px 30px rgba(0,0,0,.12)}
+        .figure:active{transform:translateY(-2px) scale(.99)}
+
+        .row{display:flex;align-items:center;gap:12px}
+        input[type="text"], input[type="email"], textarea{padding:8px;border-radius:6px;border:1px solid #ccc;width:100%;box-sizing:border-box}
+        button{padding:8px 12px;border:0;border-radius:6px;background:#2b7cff;color:white;cursor:pointer}
+        small.note{color:#666}
+    </style>
+</head>
+<body>
+    <h1>Ejemplo: formulario GET y POST con figuras interactivas</h1>
+    <p class="note">Haz clic en la figura para enfocar el campo asociado; la imagen está embebida (SVG) para que funcione localmente.</p>
+
+    <div class="container">
+        <div class="card">
+            <h2>Ejemplo GET (sin formulario)</h2>
+            <div class="row">
+                <label class="figure" tabindex="0" onclick="doGet()" title="Haz clic para enviar GET">
+                    <!-- Imagen SVG embebida (ícono de búsqueda) -->
+                    <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79L20 21.49 21.49 20l-5.99-6zM10 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>' alt="ícono"/>
+                </label>
+                <div style="flex:1">
+                    <p>Al hacer clic en la figura se abrirá la página del handler con parámetros GET de ejemplo.</p>
+                    <button onclick="doGet()">Enviar GET de ejemplo</button>
+                    <p><small class="note">Ejemplo: <code>form_handler_get.php?q=ejemplo&from=web</code></small></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Ejemplo POST (sin formulario)</h2>
+            <div class="row">
+                <label class="figure" tabindex="0" onclick="doPost()" title="Haz clic para enviar POST">
+                    <!-- Imagen SVG embebida (ícono de mensaje) -->
+                    <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v14l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>' alt="ícono mensaje"/>
+                </label>
+                <div style="flex:1">
+                    <p>Al hacer clic en la figura se enviará un POST de ejemplo mediante JavaScript (no hay elementos &lt;form&gt; en este archivo).</p>
+                    <button onclick="doPost()">Enviar POST de ejemplo</button>
+                    <p><small class="note">El resultado del POST se abrirá en una nueva ventana.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mejora accesibilidad: permitir activar figura con Enter/Space
+        document.querySelectorAll('.figure').forEach(function(el){
+            el.addEventListener('keydown', function(e){
+                if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); el.click(); }
+            });
+        });
+
+        // Enviar GET sin formulario (navegación con parámetros)
+        function doGet(){
+            const params = new URLSearchParams({q:'ejemplo', from:'web'}).toString();
+            window.location.href = 'form_handler_get.php?' + params;
+        }
+
+        // Enviar POST sin formulario usando fetch y abrir resultado en nueva ventana
+        function doPost(){
+            const data = new URLSearchParams({
+                name: 'Usuario ejemplo',
+                email: 'usuario@example.com',
+                message: 'Mensaje enviado mediante fetch POST (sin <form>)'
+            });
+
+            fetch('form_handler_post.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: data.toString()
+            })
+            .then(response => response.text())
+            .then(html => {
+                const w = window.open();
+                if (w) {
+                    w.document.write(html);
+                    w.document.close();
+                } else {
+                    alert('No se pudo abrir la ventana. Permite ventanas emergentes para esta página.');
+                }
+            })
+            .catch(err => alert('Error al enviar POST: ' + err));
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Formularios GET y POST - Ejemplo</title>
+    <style>
+        body{font-family:Arial, sans-serif;padding:20px}
+        .col{display:inline-block;vertical-align:top;width:48%;margin-right:2%}
+        label{display:block;margin:8px 0}
+        .box{border:1px solid #ddd;padding:12px;border-radius:6px}
+    </style>
+</head>
+<body>
+    <h2>Ejemplos: formulario GET y formulario POST</h2>
+
+    <div class="col box">
+        <h3>Formulario GET</h3>
+        <p>Los datos se envían en la URL (visibles). Útil para búsquedas o filtros.</p>
+        <form method="get" action="form_handler_get.php">
+            <label>Buscar: <input type="text" name="q" required></label>
+            <label>Categoría:
+                <select name="cat">
+                    <option value="all">Todas</option>
+                    <option value="news">Noticias</option>
+                    <option value="blog">Blog</option>
+                </select>
+            </label>
+            <button type="submit">Buscar (GET)</button>
+        </form>
+    </div>
+
+    <div class="col box">
+        <h3>Formulario POST</h3>
+        <p>Los datos se envían en el cuerpo de la petición (recomendado para datos privados).</p>
+        <form method="post" action="form_handler_post.php">
+            <label>Nombre: <input type="text" name="name" required></label>
+            <label>Email: <input type="email" name="email" required></label>
+            <label>Comentario:<br><textarea name="comment" rows="4" cols="30" required></textarea></label>
+            <button type="submit">Enviar (POST)</button>
+        </form>
+    </div>
+
+    <div style="clear:both;margin-top:18px">
+        <a href="form_example.html">Volver al ejemplo anterior (POST)</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Clase JavaScript</title>
+</head>
+
+<body>
+    <section id="app">
+
+        <form id="ivaFORM">
+            <label for="precio">Precio base:</label>
+            <input type="number" id="precio" name="precio" step="0.01" required><br><br>
+
+            <label for="iva">Porcentaje de IVA (%):</label>
+            <input type="number" id="iva" name="iva" step="0.01" required><br><br>
+
+            <button type="submit">Calcular IVA</button>
+        </form>
+        <div id="resultado">
+
+        </div>
+    </section>
+    <script>
+        // Funcion para calcyular el IVA
+        function calcularIVA(precioBase, porcentajeIVA) {
+            const montoIVA = precioBase * (porcentajeIVA / 100);
+            const total = precioBase + montoIVA;
+            return {
+                precioBase: precioBase.toFixed(2),
+                porcentajeIVA: porcentajeIVA.toFixed(2),
+                montoIVA: montoIVA.toFixed(2),
+                total: total.toFixed(2)
+            };
+        }
+        //capturar el formulario
+        const form = document.getElementById("ivaFORM");
+        const resultadoDiv = document.getElementById("resultado");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            const precioBase = parseFloat(document.getElementById("precio").value);
+            const porcentajeIVA = parseFloat(document.getElementById("iva").value);
+            const resultado = calcularIVA(precioBase, porcentajeIVA);
+            alert(`Precio Base: $${resultado.precioBase}\nPorcentaje de IVA: ${resultado.porcentajeIVA}%\nMonto de IVA: $${resultado.montoIVA}\nTotal con IVA: $${resultado.total}`);
+
+            resultadoDiv.innerHTML = `
+                <p>Precio Base: $${resultado.precioBase}</p>
+                <p>Porcentaje de IVA: ${resultado.porcentajeIVA}%</p>
+                <p>Monto de IVA: $${resultado.montoIVA}</p>
+                <p>Total con IVA: $${resultado.total}</p>
+             `;
+        });
+    </script>
+</body>
+
+</html>
