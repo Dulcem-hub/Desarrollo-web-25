@@ -1,43 +1,185 @@
 <!DOCTYPE html>
-<html lang="es"> 
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reseta Nestle</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ciberseguridad Inteligente</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body> <h1>Agua de Avena</h1> <!--Comentarios -->
-    <main>
-        
-        <h2> Utensilios</h2> <br>
-        Cuchara, vaso, licuadora.
-        <h2> Ingredientes</h2>
-        <ol>
-            1 Lata de Leche Evaporada CARNATION® CLAVEL® <br>
-            1 Bolsa de Leche Condensada LA LECHERA® (209 g) <br>
-            1 Taza de avena <br>
-            1 Raja de canela en raja <br>
-            3 Tazas de agua <br>
-            1 Cucharada de canela molida <br>
-            4 Cucharadas de avena <br>
-            Hielos
-        </ol>
-        <h2>
-        ¡A cocinar!
-        </h2>
-        <h3>Licua</h3>
-        
-         <p> <b> 1</b> Licúa la Leche Evaporada CARNATION® CLAVEL® con la Leche Condensada LA LECHERA®,  1 taza de avena, la raja de canela y el agua. </p>
-    
-    
-        <h3>Sirve</h3>
+<body>
+  <header>
+    <h1>CIBERSEGURIDAD INTELIGENTE</h1>
+  </header>
 
-          <p> <b>2</b> Sirve en un vaso con hielo.</p>
-        
-        <h3>¡Lista!</h3
-           <p> <b>3</b> Decora con un poco de canela y avena. Ofrece.</p>
-             
-    </main>     
+  <main>
+    <section class="mensaje">
+      <h2>Tu identidad digital es tan valiosa como tu identidad física.</h2>
+      <p>¿La estás protegiendo?</p>
+    </section>
 
-<h3> Hecho por Dulce Maria Fajardo Campos</h3> <br>
+    <section class="botones">
+      <a href="#mapa" class="btn">Explorar amenazas</a>
+      <a href="#protegerte" class="btn">Aprende a protegerte</a>
+    </section>
 
-<q> https://www.recetasnestle.com.mx/recetas/bebidas-agua-avena</q>
+    <section class="ciber-mundo">
+      <h2>🌐 Ciberseguridad en el mundo</h2>
+
+      <article id="mapa" class="mapa-interactivo">
+        <h3>Mapa interactivo con zonas de riesgo</h3>
+        <svg viewBox="0 0 500 300" class="mapa-svg" role="img" aria-label="Mapa interactivo con zonas de riesgo">
+          <!-- imagen de fondo común para todas las figuras -->
+          <image href="assets/seguridad.pg.jpeg" x="0" y="0" width="500" height="300" preserveAspectRatio="xMidYMid slice" />
+          <a href="https://ciberseguridad.anahuac.mx/" target="_blank" rel="noopener noreferrer">
+            <!-- figura: rectangulo opaco con etiqueta -->
+            <rect x="50" y="50" width="100" height="100" fill="#4CAF50" class="zona" />
+            <text x="100" y="115" fill="#ffffff" font-size="14" text-anchor="middle">Anahuac</text>
+            <title>Anahuac</title>
+          </a>
+          <a href="https://www.incibe.es" target="_blank" rel="noopener noreferrer">
+            <!-- figura: circulo opaco con etiqueta -->
+            <circle cx="300" cy="100" r="50" fill="#2196F3" class="zona" />
+            <text x="300" y="105" fill="#ffffff" font-size="14" text-anchor="middle">Incibe.es</text>
+            <title>INCIBE España</title>
+          </a>
+          <a href="#imagen">
+            <!-- figura: poligono opaco con etiqueta -->
+            <polygon points="200,200 250,250 150,250" fill="#FF9800" class="zona" />
+            <text x="200" y="265" fill="#ffffff" font-size="14" text-anchor="middle">Ver imagen</text>
+            <title>Zona con imagen</title>
+          </a>
+          <a href="#tabla">
+            <!-- figura: elipse opaca con etiqueta -->
+            <ellipse cx="400" cy="200" rx="40" ry="25" fill="#9C27B0" class="zona" />
+            <text x="400" y="205" fill="#ffffff" font-size="13" text-anchor="middle">Resumen</text>
+            <title>Resumen del mapa</title>
+          </a>
+        </svg>
+      </article>
+
+      <article id="imagen">
+        <h3>Visualización de amenazas</h3>
+        <picture>
+          <source srcset="assets/mapa-de-riesgo.png" type="image/png" />
+          <img src="assets/mapa-de-riesgo.png" alt="Mapa de zonas de riesgo cibernético" loading="lazy" />
+        </picture>
+      </article>
+
+      <article class="estadisticas">
+        <h3>Estadísticas globales</h3>
+        <ul>
+          <li>+2,200 ataques diarios</li>
+          <li>+493M ataques ransomware en 2022</li>
+          <li>USD 4.35M por violación de datos</li>
+        </ul>
+      </article>
+
+      <article class="grafico">
+        <h3>Tipos de ataques más comunes</h3>
+        <img src="assets/grafico-tipos-de-ataques.png" alt="Gráfico de ataques" loading="lazy" />
+      </article>
+    </section>
+
+    <section class="mexico-ataques">
+      <h2>🇲🇽 México bajo ataque</h2>
+      <ul>
+        <li>+35,200 millones de intentos de ciberataques en 2025</li>
+        <li>Phishing creció un 220% en el último año</li>
+        <li>Robo de identidad y fraudes digitales en aumento</li>
+      </ul>
+    </section>
+
+    <section id="tabla" class="tabla-resumen">
+      <h3>Resumen del Mapa</h3>
+      <table>
+        <caption>Resumen del mapa - enlaces internos y externos</caption>
+        <tr>
+          <th rowspan="2">Zona</th>
+          <th colspan="2">Enlaces</th>
+        </tr>
+        <tr>
+          <th>Interno</th>
+          <th>Externo</th>
+        </tr>
+        <tr>
+          <td>Gobierno</td>
+          <td>-</td>
+          <td><a href="https://ciberseguridad.anahuac.mx/" target="_blank" rel="noopener noreferrer">anahuac</a></td>
+        </tr>
+        <tr>
+          <td>INCIBE</td>
+          <td>-</td>
+          <td><a href="https://www.incibe.es" target="_blank" rel="noopener noreferrer">Incibe.es</a></td>
+        </tr>
+        <tr>
+          <td>Imagen</td>
+          <td><a href="#imagen">Ver imagen</a></td>
+          <td>-</td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="protegerte" class="protegerte">
+      <h2>🛡️ ¿Cómo protegerte?</h2>
+
+  <form id="seguridadTest">
+        <fieldset>
+          <legend>1. ¿Usas contraseñas diferentes para cada cuenta?</legend>
+          <label><input type="radio" name="q1" value="1"> Sí</label>
+          <label><input type="radio" name="q1" value="0"> No</label>
+        </fieldset>
+        <fieldset>
+          <legend>2. ¿Tienes activada la verificación en dos pasos?</legend>
+          <label><input type="radio" name="q2" value="1"> Sí</label>
+          <label><input type="radio" name="q2" value="0"> No</label>
+        </fieldset>
+        <fieldset>
+          <legend>3. ¿Revisas los correos antes de abrir enlaces?</legend>
+          <label><input type="radio" name="q3" value="1"> Siempre</label>
+          <label><input type="radio" name="q3" value="0"> A veces / Nunca</label>
+        </fieldset>
+        <fieldset>
+          <legend>4. ¿Actualizas tu software regularmente?</legend>
+          <label><input type="radio" name="q4" value="1"> Sí</label>
+          <label><input type="radio" name="q4" value="0"> No</label>
+        </fieldset>
+        <button type="button" onclick="evaluarSeguridad()">Evaluar</button>
+      </form>
+      <p id="resultado" aria-live="polite"></p>
+
+      <ul class="consejos">
+        <li><img src="assets/icono-contraseña.png" alt="Contraseña fuerte"> Contraseñas fuertes</li>
+        <li><img src="assets/icono-2fa.png" alt="Verificación en dos pasos"> Verificación en dos pasos</li>
+        <li><img src="assets/icono-correo.png" alt="Correo sospechoso"> No abrir correos sospechosos</li>
+        <li><img src="assets/icono-actualizar.png" alt="Actualizar software"> Actualizar software</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ciberseguridad Inteligente | Proyecto educativo de Dulce Fajardo</p>
+  </footer>
+
+  <script>
+    function evaluarSeguridad() {
+      let puntaje = 0;
+      for (let i = 1; i <= 4; i++) {
+        const respuesta = document.querySelector(`input[name="q${i}"]:checked`);
+        if (respuesta) {
+          puntaje += parseInt(respuesta.value, 10);
+        }
+      }
+      const resultado = document.getElementById("resultado");
+      if (puntaje === 4) {
+        resultado.textContent = "¡Excelente! Tu navegación es muy segura 🟢";
+      } else if (puntaje >= 2) {
+        resultado.textContent = "Bien, pero hay áreas que puedes mejorar 🟡";
+      } else {
+        resultado.textContent = "Cuidado: tu seguridad digital está en riesgo 🔴";
+      }
+    }
+  </script>
+</body>
+</html>
+
+
